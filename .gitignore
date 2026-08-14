@@ -1,0 +1,34 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Samsung Health personal exports — do NOT commit private health/location data
+samsunghealth_*/
+jsons/
+com.samsung.*.csv
+*.json
+
+# Generated migration outputs
+fit_exports/
+*.fit
+activities-export-*.csv
+activities-zero-export-*.csv
+activities-strict-export-*.csv
+weight-export-*.csv
+
+# Local logs/temp
+*.log
+*.tmp
+
+# Local/private dependency cache. Keep only the explanatory README in Git.
+vendor/*
+!vendor/README.md
