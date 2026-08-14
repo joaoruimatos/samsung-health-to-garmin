@@ -81,5 +81,34 @@ class ActivityModeTests(unittest.TestCase):
                 self.assertEqual(len(rows), 2)
 
 
+    def test_zero_step_day_is_preserved_by_fetch_activity_data(self):
+        import os
+
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            source = td / "com.samsung.shealth.activity.day_summary.test.csv"
+            source.write_text(
+                "day_time,step_count,distance,calorie,run_time,walk_time\n"
+                "2026-08-10 00:00:00.000,0,0,0,0,0\n"
+                "2026-08-11 00:00:00.000,1234,987.6,42,60000,120000\n"
+                "2026-08-12 00:00:00.000,,100,10,0,0\n",
+                encoding="utf-8",
+            )
+
+            old_cwd = os.getcwd()
+            os.chdir(td)
+            try:
+                rows = activity.fetch_activity_data()
+            finally:
+                os.chdir(old_cwd)
+
+            self.assertIn("2026-08-10", rows)
+            self.assertEqual(rows["2026-08-10"]["Steps"], 0)
+            self.assertIn("2026-08-11", rows)
+            self.assertEqual(rows["2026-08-11"]["Steps"], 1234)
+            self.assertNotIn("2026-08-12", rows)
+
+
+
 if __name__ == "__main__":
     unittest.main()
