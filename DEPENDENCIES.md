@@ -6,7 +6,7 @@ This project deliberately keeps third-party dependencies small.
 
 ### Python
 
-- Python 3.9+ is recommended for this project.
+- Python 3.10+ is recommended for this project.
 - Garmin's FIT Python SDK itself supports Python 3.6+, but the project is developed and tested with modern Python 3 releases.
 
 ### Garmin FIT Python SDK
