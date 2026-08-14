@@ -151,11 +151,14 @@ def fetch_activity_data() -> Dict[str, dict]:
                 continue
             date = parse_samsung_date(raw_day)
 
-            step_count = int(float(row.get("step_count") or 0))
-            # Preserve the original FromSamToGarm behaviour: days with no steps
-            # are not useful for this particular daily-activity import.
-            if step_count == 0:
+            raw_steps = (row.get("step_count") or "").strip()
+            if not raw_steps:
+                # Missing step_count is unknown data, not a genuine zero-step day.
+                # Skip only rows where Samsung did not provide a step total at all.
                 continue
+
+            # Keep genuine zero-step days.
+            step_count = int(float(raw_steps))
 
             distance = round(float(row.get("distance") or 0) / 1000, 2)
             calorie = float(row.get("calorie") or 0)
