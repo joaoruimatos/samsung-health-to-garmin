@@ -482,7 +482,8 @@ Check at least:
 
 # 4. Daily steps/calories/floors → CSV
 
-Compatibility note: Garmin officially documents CSV third-party import for files exported directly from Fitbit. The CSV files produced by this project reproduce the Fitbit-style daily activity format and have worked in real-world testing, but this is an unofficial compatibility workaround. Garmin may change its importer at any time.
+> **Compatibility note:** Garmin officially documents CSV third-party import for files exported directly from Fitbit. The CSV files produced by this project reproduce the Fitbit-style daily activity format and have worked in real-world testing, but this is an unofficial compatibility workaround. Garmin may change its importer at any time.
+
 `activity_fixed_v4.py` reads Samsung's daily activity, calorie and floor datasets and creates the full Fitbit-style column layout expected by Garmin's CSV importer.
 
 Run it **from the Samsung Health export root**.
