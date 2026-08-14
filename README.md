@@ -46,7 +46,7 @@ See [ATTRIBUTION.md](ATTRIBUTION.md) for details.
 
 ## Dependencies at a glance
 
-- **Python 3.9+ recommended.**
+- **Python 3.10+ recommended.**
 - **`garmin-fit-sdk>=21.200.0,<22`** is required by `samsung_health_to_fit.py` for FIT encoding and verification. Garmin added the Python `Encoder` in 21.200.0.
 - `activity_fixed_v4.py` uses only Python's standard library.
 - `setup.ps1` creates a virtual environment and installs `requirements.txt`.
