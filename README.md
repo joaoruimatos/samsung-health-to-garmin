@@ -36,7 +36,6 @@ See [ATTRIBUTION.md](ATTRIBUTION.md) for details.
 | `run_tests.ps1` | Runs the full test suite using the project virtual environment. |
 | `ATTRIBUTION.md` | Credits and upstream-project notes. |
 | `SAMSUNG_EXERCISE_TYPES.md` | Legacy numeric IDs and newer Health Data SDK enum reference. |
-| `GITHUB_UPLOAD.md` | Step-by-step instructions for publishing the project on GitHub. |
 | `.github/workflows/tests.yml` | GitHub Actions workflow that installs dependencies and runs the full tests. |
 | `LICENSE` | GNU GPL v3 license. |
 
