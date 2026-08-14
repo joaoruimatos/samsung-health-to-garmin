@@ -17,7 +17,9 @@ if (-not (Test-Path $Python)) {
     throw "Virtual-environment Python was not found at $Python"
 }
 
-& $Python -m pip install --upgrade pip
+if (-not $Offline) {
+    & $Python -m pip install --upgrade pip
+}
 
 if ($CacheDependencies) {
     New-Item -ItemType Directory -Force -Path "vendor" | Out-Null
