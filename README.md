@@ -150,6 +150,8 @@ Current mappings:
 
 You can edit `SAMSUNG_TO_FIT` near the top of the script if your export contains additional Samsung exercise IDs.
 
+> **Unknown exercise IDs:** If an export contains a Samsung exercise ID that is not enabled in `SAMSUNG_TO_FIT`, the converter currently preserves the activity by exporting it as `generic / generic` and prints a warning. This is intentional rather than silently discarding the activity. Review the warning, check the mapping reference below, and test the resulting activity in Garmin Connect before bulk importing unknown types.
+
 ### Other documented Samsung numeric IDs — reference only
 
 Samsung's legacy numeric `EXERCISE_TYPE` reference documents the IDs below in addition to the ten mappings enabled above. They are **not enabled by default** because this project has not personally tested their Garmin Connect classification.
